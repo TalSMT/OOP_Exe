@@ -8,7 +8,8 @@ import Data_sets.Point3D;
 import java.text.*;
 
 /**
- * This class represents a simple WiFi beacon in time, with: time, ssid, mac. channel, rssi and position.
+ * This class represents a simple WiFi scan of beacons in a given time, 
+ * with: time, ID, Pos, #of wifi beacons, <ssid, mac. channel, rssi>.
  * 
  * @author benmo
   */

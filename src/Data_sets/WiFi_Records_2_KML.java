@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Iterator;
 
+import WiFi_data.WiFi_Scans;
 import WiFi_data.WiFi_Beacons_md;
 import WiFi_data.WiFi_Scan;
 import de.micromata.opengis.kml.v_2_2_0.Document;
@@ -43,7 +44,7 @@ public class WiFi_Records_2_KML {
 		
 	}
 	private static void add_all(WiFi_Beacons_md records, Document kml, Folder f) {
-		MyVector mv = records.convert();
+		WiFi_Scans mv = records.convert();
 		
 		Iterator<WiFi_Scan> itr = mv.iterator();
 		int i=0;

@@ -1,5 +1,5 @@
 /**
- * This is the main container for multi divices;
+ * This is the main container for WiFi_Scans - captured by multi devices;
  */
 package WiFi_data;
 
@@ -7,8 +7,6 @@ import java.io.File;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
-
-import Data_sets.MyVector;
 
 public class WiFi_Beacons_md {
 	private ArrayList< WiFi_Scan> _devices;
@@ -34,8 +32,8 @@ public class WiFi_Beacons_md {
 	      }
 	      _devices.sort(WiFi_Scan.COMP_SCANS);
 	}
-	public MyVector convert() {
-		MyVector ans = new MyVector();
+	public WiFi_Scans convert() {
+		WiFi_Scans ans = new WiFi_Scans();
 		Iterator<WiFi_Scan> iter = this._devices.iterator();
 		while(iter.hasNext()) {
 			ans.add(iter.next());  // NOTE this is only a shallow copy!!

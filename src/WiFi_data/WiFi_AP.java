@@ -1,6 +1,6 @@
 package WiFi_data;
 /**
- * This class represents the simplest wifi single AP received beacon in time
+ * This class represents the simplest wifi single AP received beacon in time.
  * @author benmo
  *
  */

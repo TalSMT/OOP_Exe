@@ -37,7 +37,7 @@ public class WiFi_Beacons_sd extends ArrayList<WiFi_Scan> {
 	}
 	public String get_device_id() {return this._device_id;}
 /**
- * This method simply combine all the same time WiFi_Samples into a single ArrayList.
+ * This method simply combines all the same time WiFi_Samples into a single ArrayList.
  */
 	public void order() {
 		int i0=0;

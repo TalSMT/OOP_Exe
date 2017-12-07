@@ -1,19 +1,18 @@
-package Data_sets;
+package WiFi_data;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 import Filter.filter;
-import WiFi_data.WiFi_Scan;
 
 import java.io.*;
 
-public class MyVector extends ArrayList<WiFi_Scan> {
+public class WiFi_Scans extends ArrayList<WiFi_Scan> {
 
-	public MyVector() {
+	public WiFi_Scans() {
 		super();
 	}
-	public MyVector copy() {
-		MyVector ans = new MyVector();
+	public WiFi_Scans copy() {
+		WiFi_Scans ans = new WiFi_Scans();
 		Iterator<WiFi_Scan> itr = this.iterator();
 		while(itr.hasNext()) {
 			ans.add(itr.next());

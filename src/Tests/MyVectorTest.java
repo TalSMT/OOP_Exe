@@ -5,16 +5,16 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import Data_sets.MyVector;
 import Data_sets.Point3D;
 import Filter.Position_Filter_Circle;
 import Filter.Position_Filter_Rectangle3D;
 import Filter.Time_Filter;
 import Filter.filter;
+import WiFi_data.WiFi_Scans;
 import WiFi_data.WiFi_Beacons_md;
 
 public class MyVectorTest {
-	private MyVector _mv;
+	private WiFi_Scans _mv;
 	@Before
 	public void setUp() throws Exception {
 		String s0 = "data/BM1/wifi_logs";
