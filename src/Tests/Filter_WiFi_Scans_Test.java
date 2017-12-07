@@ -13,7 +13,7 @@ import Filter.filter;
 import WiFi_data.WiFi_Scans;
 import WiFi_data.WiFi_Beacons_md;
 
-public class MyVectorTest {
+public class Filter_WiFi_Scans_Test {
 	private WiFi_Scans _mv;
 	@Before
 	public void setUp() throws Exception {
