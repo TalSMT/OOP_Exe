@@ -5,7 +5,12 @@ import java.util.Iterator;
 import Filter.filter;
 
 import java.io.*;
-
+/**
+ * This class represents a container of WiFi_Scan sorted by time & device. 
+ * Main functionality includes: load, save and filter.
+ * @author benmo
+ *
+ */
 public class WiFi_Scans extends ArrayList<WiFi_Scan> {
 
 	public WiFi_Scans() {
