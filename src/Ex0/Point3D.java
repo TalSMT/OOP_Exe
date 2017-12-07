@@ -145,7 +145,44 @@ public class Point3D implements Serializable
     public String toFile()  {return _x+","+_y+","+_z;}
     
     public String toFile1()  {return "Point3D "+_x+" "+_y+" "+_z;}
-
+    /**
+     * return true iff this.x < p.x && this.y<p.y
+     * @param p
+     * @return
+     */
+    public boolean smallerThan2D(Point3D p) {
+    	boolean ans = false;
+    	if(p==null) {throw new RuntimeException("Error: smallerThan(Point3D p) - got a null value for p --> error!");}
+    	
+    	if(this.x()<p.x() && this.y()<p.y()) {ans = true;}
+    	return ans;
+    }
+    /**
+     * return true iff this.smallerThan3D(p) && this.z() < p.z();
+     * @param p
+     * @return
+     */
+    public boolean smallerThan3D(Point3D p) {
+    	boolean ans = smallerThan2D(p);
+    	ans = ans  & (this.z() < p.z());
+    	return ans;
+    }
+    /**
+     * return p.smallerThan2D(this);
+     * @param p
+     * @return
+     */
+    public boolean biggerThan2D(Point3D p) {
+    	return p.smallerThan2D(this);
+    }
+    /**
+     * return p.smallerThan3D(this)
+     * @param p
+     * @return
+     */
+    public boolean biggerThan3D(Point3D p) {
+    	return p.smallerThan3D(this);
+    }
     ////////////////////////////////////////////////////////////////////////////////////////
 
 public final static int ONSEGMENT = 0,  LEFT = 1, RIGHT = 2, INFRONTOFA = 3, BEHINDB = 4, ERROR = 5;
