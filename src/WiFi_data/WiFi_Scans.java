@@ -24,7 +24,7 @@ public class WiFi_Scans extends ArrayList<WiFi_Scan> {
 		    		if(wi.is_is_wifi_scan()) {this.add(wi);}
 		    	}
 		    	catch(Exception e) {
-		    		e.printStackTrace();
+		    	//	e.printStackTrace();
 		    		System.err.println("ERR reading line "+i+") Line: "+line);
 		    	}
 		    	line = csv_br.readLine();

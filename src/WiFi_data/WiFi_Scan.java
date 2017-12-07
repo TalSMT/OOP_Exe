@@ -51,11 +51,12 @@ public class WiFi_Scan {
 		line = line.replaceAll(",,",", ,");
 		String[] ar = line.split(",");
 		int size = ar.length;
-		int n_of_wifi  =  new Integer(ar[5]);
-		if(size<6 || size>47 || n_of_wifi*4+6!=size) {
+		int n_of_wifi = 0;
+		if(size>6) {n_of_wifi  =  new Integer(ar[5]);}
+		if(size<5 || size>47 || n_of_wifi*4+6!=size) {
 			throw new RuntimeException("error: WiFi_Scan can not be init from String "+line);
 		}
-		Point3D p = new Point3D(ar[2]+","+ar[3]+","+ar[4]);
+		Point3D p = new Point3D(ar[2]+" "+ar[3]+" "+ar[4]);
 		ans= new WiFi_Scan(ar[0], ar[1], p);
 		int i=0;
 		while (i<n_of_wifi) {
@@ -64,6 +65,7 @@ public class WiFi_Scan {
 			ans.add(w);
 			i++;
 		}
+		ans.set_is_wifi_scan(true);
 		return ans;
 	}
 	public String toString() {
@@ -73,7 +75,7 @@ public class WiFi_Scan {
 			s+=","+get(i);
 		}
 		
-		return this.get_time()+","+this._device_id+","+this.get_pos().toFile()+","+num+","+s;
+		return this.get_time()+","+this._device_id+","+this.get_pos().toFile()+","+num+s;
 	}
 	
 	public int size() {return this._aps.size();}

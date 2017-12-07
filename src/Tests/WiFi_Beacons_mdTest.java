@@ -12,7 +12,7 @@ public class WiFi_Beacons_mdTest {
 
 	@Test
 	public void testWiFi_Beacons_md() {
-		String s0 = "data/TS2/";
+		String s0 = "data/BM2/Wifi_scans/";
 		WiFi_Beacons_md t = new WiFi_Beacons_md(s0);
 		t.save_to_csv(s0+"_comb_.csv");
 		//fail("Not yet implemented");
