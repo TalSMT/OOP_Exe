@@ -20,8 +20,10 @@ public class WiFi_Scans extends ArrayList<WiFi_Scan> {
 			int i=1;
 		    while(line!=null) {
 		    	try{
-		    		WiFi_Scan wi = WiFi_Scan.init_from_46_csv_file(line);
-		    		if(wi.is_is_wifi_scan()) {this.add(wi);}
+		    		if(line.length()>10) {
+		    			WiFi_Scan wi = WiFi_Scan.init_from_46_csv_file(line);
+		    			if(wi.is_is_wifi_scan()) {this.add(wi);}
+		    		}
 		    	}
 		    	catch(Exception e) {
 		    	//	e.printStackTrace();
@@ -66,9 +68,10 @@ public class WiFi_Scans extends ArrayList<WiFi_Scan> {
 			StringBuilder sb = new StringBuilder();
 			Iterator<WiFi_Scan> is = this.iterator();
 			while (is.hasNext()) {
-				sb.append(is.next().toString()+"\n");
+				sb.append(is.next().toString());
+				if(is.hasNext()) {sb.append("/n");}
 			}
-			pw.println(sb);
+			pw.print(sb);
 			pw.close();
 		}
 		catch (Exception e) {
