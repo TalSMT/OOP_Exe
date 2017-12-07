@@ -1,6 +1,6 @@
 package Filter;
 
-import Ex0.WiFi_Scan;
+import WiFi_data.WiFi_Scan;
 
 /**
 	 * This class represents a simple time filter based on a 1D time window range
@@ -20,7 +20,7 @@ public class Time_Filter implements filter{
 			String t = rec.get_time();
 			int ts = _start.compareTo(t);
 			int te = _end.compareTo(t);
-			System.out.println(_start+"  <  "+t+"   <  "+_end+"  "+ts+"  "+te);
+	//		System.out.println(_start+"  <  "+t+"   <  "+_end+"  "+ts+"  "+te);
 			// t0.compareTo(t)<0 && t1.compareTo(t)>0
 			if(ts<=0 && te>0) {ans = true;}
 		}

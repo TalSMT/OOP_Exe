@@ -1,6 +1,6 @@
 package Filter;
 
-import Ex0.WiFi_Scan;
+import WiFi_data.WiFi_Scan;
 
 /**
  * KALLLL

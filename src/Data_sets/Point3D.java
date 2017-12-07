@@ -1,4 +1,4 @@
-package Ex0;
+package Data_sets;
 
 import java.io.Serializable;
 public class Point3D implements Serializable 

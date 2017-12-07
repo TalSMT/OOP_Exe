@@ -1,6 +1,6 @@
 package Filter;
-import Ex0.Point3D;
-import Ex0.WiFi_Scan;
+import Data_sets.Point3D;
+import WiFi_data.WiFi_Scan;
 
 /**
  * This class represents a simple position filter based on a 2D distance from a center Point

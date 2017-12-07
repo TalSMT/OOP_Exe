@@ -1,4 +1,4 @@
-package Ex0;
+package WiFi_data;
 import java.util.Comparator;
 public class WiFi_Scan_Comparator implements Comparator<WiFi_Scan> {
 

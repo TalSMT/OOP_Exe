@@ -2,8 +2,8 @@ package Data_sets;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import Ex0.WiFi_Scan;
 import Filter.filter;
+import WiFi_data.WiFi_Scan;
 
 import java.io.*;
 
@@ -18,11 +18,6 @@ public class MyVector extends ArrayList<WiFi_Scan> {
 		while(itr.hasNext()) {
 			ans.add(itr.next());
 		}
-		/*MyVector ans = new MyVector();
-		for(int i=0;i<this.size();i++) {
-			Record rec = new Record(this.get(i));
-			ans.add(rec);
-		}*/
 		return ans;
 	}
 	/**

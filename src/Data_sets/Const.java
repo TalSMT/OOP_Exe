@@ -1,4 +1,4 @@
-package Ex0;
+package Data_sets;
 
 /**
 This class contains the constants for the Object Oriented Course Homework (OOP course Arien Uni' 2017-2018). <br>

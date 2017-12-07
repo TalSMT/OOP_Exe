@@ -6,7 +6,7 @@ import java.io.File;
 
 import org.junit.Test;
 
-import Ex0.WiFi_Beacons_sd;
+import WiFi_data.WiFi_Beacons_sd;
 
 public class WiFi_Beacons_sdTest {
 

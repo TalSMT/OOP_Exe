@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import Ex0.WiFi_Scan;
+import WiFi_data.WiFi_Scan;
 
 public class WiFi_ScanTest {
 

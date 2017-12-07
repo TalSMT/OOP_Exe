@@ -1,7 +1,7 @@
 /**
  * This is the main container for multi divices;
  */
-package Ex0;
+package WiFi_data;
 
 import java.io.File;
 import java.io.PrintWriter;

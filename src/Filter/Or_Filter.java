@@ -1,6 +1,6 @@
 package Filter;
 
-import Ex0.WiFi_Scan;
+import WiFi_data.WiFi_Scan;
 
 public class Or_Filter implements filter{
 	private filter _f1, _f2;
