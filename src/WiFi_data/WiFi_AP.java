@@ -18,7 +18,7 @@ public class WiFi_AP {
 	}
 	
 	public String toString() {
-		return ""+","+this.get_ssid()+","+this.get_mac()+","+this.get_channel()+","+this.get_rssi();
+		return this.get_ssid()+","+this.get_mac()+","+this.get_channel()+","+this.get_rssi();
 	}
 	
 	public String get_ssid() {

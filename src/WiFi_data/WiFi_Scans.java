@@ -11,6 +11,30 @@ public class WiFi_Scans extends ArrayList<WiFi_Scan> {
 	public WiFi_Scans() {
 		super();
 	}
+	public WiFi_Scans(String csv_file) {
+		this();
+		try {
+			FileReader fr = new FileReader(csv_file);
+			BufferedReader csv_br = new BufferedReader(fr);
+			String line = csv_br.readLine();
+			int i=1;
+		    while(line!=null) {
+		    	try{
+		    		WiFi_Scan wi = WiFi_Scan.init_from_46_csv_file(line);
+		    		if(wi.is_is_wifi_scan()) {this.add(wi);}
+		    	}
+		    	catch(Exception e) {
+		    		e.printStackTrace();
+		    		System.err.println("ERR reading line "+i+") Line: "+line);
+		    	}
+		    	line = csv_br.readLine();
+		    	i++;
+		      }
+		   }
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
 	public WiFi_Scans copy() {
 		WiFi_Scans ans = new WiFi_Scans();
 		Iterator<WiFi_Scan> itr = this.iterator();
