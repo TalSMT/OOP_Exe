@@ -1,6 +1,8 @@
 package WiFi_data;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
 
 import Tools.Point3D;
 
@@ -32,6 +34,9 @@ public class APs_Scans {
 			}
 		}
 	}
+	 public HashMap<String, AP_Scans> get_HashMap() {
+		 return _map;
+	 }
 	/**
 	 * return the number of MACs
 	 * @return
@@ -52,5 +57,4 @@ public class APs_Scans {
 	public AP_Scans get(String mac) {
 		return this._map.get(mac);
 	}
-	
 }
