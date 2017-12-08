@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import Data_sets.WiFi_Records_2_KML;
+import Tools.WiFi_Records_2_KML;
 import WiFi_data.WiFi_Beacons_md;
 
 public class WiFi_Records_2_KMLTest {

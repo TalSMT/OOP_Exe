@@ -1,9 +1,10 @@
 package Filter;
-import Data_sets.Point3D;
+import Tools.Point3D;
 import WiFi_data.WiFi_Scan;
 
 /**
  * This class represents a simple position filter based on a 2D distance from a center Point
+ * Note: this is a simple L2 distance - when using GEO coordinates - one can expect a sphere (and not a circle).
  * @author Boaz
  *
  */

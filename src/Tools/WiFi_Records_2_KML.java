@@ -3,7 +3,7 @@
  * into a KML (google earth) file. 
  * Based on the JAK api: https://labs.micromata.de/projects/jak.html
  */
-package Data_sets;
+package Tools;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Iterator;

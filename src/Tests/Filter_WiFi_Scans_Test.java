@@ -5,11 +5,11 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import Data_sets.Point3D;
 import Filter.Position_Filter_Circle;
 import Filter.Position_Filter_Rectangle3D;
 import Filter.Time_Filter;
 import Filter.filter;
+import Tools.Point3D;
 import WiFi_data.WiFi_Scans;
 import WiFi_data.WiFi_Beacons_md;
 
