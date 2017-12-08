@@ -20,7 +20,7 @@ z	680			685			691
 
 public class Cords {
 	static final double EARTH_RADIUS = 1000*6371;
-
+	static final Point3D OO = new Point3D(0,0,0);
 	/**
 	 * this method computes the flat world distance vector between two global points (lat-north, lon-east, alt-above-sea) 
 	 * assuming the two points are relatively close .
@@ -37,6 +37,23 @@ public class Cords {
 		double x = EARTH_RADIUS * Math.sin(Math.toRadians(dx)) * Math.cos(Math.toRadians(ll1[0]));
 		double y = EARTH_RADIUS * Math.sin(Math.toRadians(dy)); 
 		ans[0] = x; ans[1]=y; ans[2] = dz;
+		return ans;
+	}
+	/** a Simple distance in meter between to lat/lon/alt locations.
+	 * return a Point3D with <East, North, Up> in meters!  
+	 * @param a
+	 * @param b
+	 * @return
+	 */
+	public static Point3D flatWorldDist(Point3D a, Point3D b) {
+		double[] aa = {a.x(), a.y(), a.z()};
+		double[] bb = {b.x(), b.y(), b.z()};
+		double[] cc = flatWorldDist(aa,bb);
+		return new Point3D(cc[0],cc[1],cc[2]);
+	}
+	public static double dist2D_Lat_Lon(Point3D a, Point3D b) {
+		Point3D d = flatWorldDist(a,b);
+		double ans = OO.distance2D(d);
 		return ans;
 	}
 	/**

@@ -15,6 +15,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import Tools.Cords;
+import Tools.Point3D;
 public class CordsTest {
 	//////////////////////////////////////////////////////
 	
@@ -43,6 +44,39 @@ public class CordsTest {
 		System.out.println("Vec12:"+ad12[0]+", "+ad12[1]);
 		System.out.println("Vec13:"+ad13[0]+", "+ad13[1]);
 		System.out.println("Vec23:"+ad23[0]+", "+ad23[1]);
+	}
+	@Test
+	/**
+	 * 35.209687	35.20954	35.210063	lon
+		y	32.10283	32.10368	32.104084	lat
+		z	680			685			691	
+						
+			p1-->p2	p1-->p3	p2-->p3	
+			95.5	147	69	65
+		
+	 */
+	public void simpleDistTest() {
+		double m12 = 95.5; 
+		double m13 = 143.8;
+		double m23 = 66.67;
+		Point3D p1 = new Point3D(32.10283, 35.209687, 680);
+		Point3D p2 = new Point3D(32.10368, 35.20954, 685);
+		Point3D p3 = new Point3D(32.104084, 35.210063, 691);
+		double d12 = Cords.dist2D_Lat_Lon(p1, p2);
+		double d23 = Cords.dist2D_Lat_Lon(p2, p3);
+		double d13 = Cords.dist2D_Lat_Lon(p1, p3);
+		if(Math.abs(d12-m12)>0.5) {
+			System.err.println("ERR: Cords  p12: "+d12);
+			fail();
+		}
+		if(Math.abs(d13-m13)>0.5) {
+			System.err.println("ERR: Cords  p13: "+d13);
+			fail();
+		}
+		if(Math.abs(d23-m23)>0.5) {
+			System.err.println("ERR: Cords  p23: "+d23);
+			fail();
+		}
 	}
 	@Test
 	public void test1() {
