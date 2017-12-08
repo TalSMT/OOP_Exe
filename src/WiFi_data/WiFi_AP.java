@@ -16,7 +16,9 @@ public class WiFi_AP {
 		this.set_channel(channel);
 		this.set_rssi(rssi);
 	}
-	
+	public WiFi_AP(WiFi_AP ap) {
+		this(ap.get_mac(), ap.get_ssid(), ap.get_channel(), ap.get_rssi());
+	}
 	public String toString() {
 		return this.get_ssid()+","+this.get_mac()+","+this.get_channel()+","+this.get_rssi();
 	}
