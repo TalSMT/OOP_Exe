@@ -26,6 +26,10 @@ public class Time_Filter implements filter{
 		}
 		return ans;
 	}
+
+	public String toString() {
+		return ""+this.getClass().getName()+" ["+this._start+","+_end+"]";
+	}
 		
 	/********** Private data can be located anywhere *************/
 	private String _start, _end;

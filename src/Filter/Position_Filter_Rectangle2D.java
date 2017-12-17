@@ -23,6 +23,9 @@ public class Position_Filter_Rectangle2D implements filter{
 			}
 			return ans;
 		}
+		public String toString() {
+			return ""+this.getClass().getName()+" ["+this._min+","+_max+"]";
+		}
 		
 		/********** Private data can be located anywhere *************/
 		private final Point3D _min, _max;

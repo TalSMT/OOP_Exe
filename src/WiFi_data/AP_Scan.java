@@ -19,6 +19,10 @@ public class AP_Scan extends WiFi_AP{
 		_device_type = d;
 	}
 	
+	public AP_Scan(AP_Scan ap) {
+		this(ap, ap.get_pos(), ap.get_time(), ap.get_device_type());
+	}
+
 	public String toString() {
 		String ans = super.toString();
 		ans+=","+_pos.toFile()+","+_time+","+this._device_type;

@@ -15,4 +15,8 @@ public class Not_Filter implements filter{
 	public boolean test(WiFi_Scan rec) {
 		return !(_filter.test(rec));
 	}
+
+	public String toString() {
+		return "not("+_filter+")";
+	}
 }

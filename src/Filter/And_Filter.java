@@ -11,4 +11,7 @@ public class And_Filter implements filter{
 	public boolean test(WiFi_Scan rec) {
 		return _f1.test(rec) && _f2.test(rec);
 	}
+	public String toString() {
+		return "("+_f1+" and "+_f2+")";
+	}
 }

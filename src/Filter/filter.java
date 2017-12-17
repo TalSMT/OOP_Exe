@@ -1,5 +1,7 @@
 package Filter;
 
+import java.io.Serializable;
+
 import WiFi_data.WiFi_Scan;
 
 /**
@@ -7,7 +9,7 @@ import WiFi_data.WiFi_Scan;
  * @author Boaz
  *
  */
-public interface filter {
+public interface filter extends Serializable{
 	/**
 	 * test if the Record rec is pass the filter 
 	 * @param rec

@@ -74,7 +74,7 @@ public class WiFi_Scans extends ArrayList<WiFi_Scan> {
 			Iterator<WiFi_Scan> is = this.iterator();
 			while (is.hasNext()) {
 				sb.append(is.next().toString());
-				if(is.hasNext()) {sb.append("/n");}
+				if(is.hasNext()) {sb.append("\n");}
 			}
 			pw.print(sb);
 			pw.close();

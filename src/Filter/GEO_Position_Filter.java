@@ -23,7 +23,9 @@ public class GEO_Position_Filter implements filter{
 		}
 		return ans;
 	}
-	
+	public String toString() {
+		return this.getClass().getName()+" cen: "+_center+"  dist: "+_dist;
+	}
 	/********** Private data can be located anywhere *************/
 	private final Point3D _center;
 	private double _dist;

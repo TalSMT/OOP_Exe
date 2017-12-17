@@ -46,6 +46,14 @@ public class WiFi_Scan {
 		this._pos = p;
 		this._aps = new ArrayList<WiFi_AP>();
 	}
+	/**
+	 * This is a sallow copy only to be used by sun-class.
+	 * @param ws
+	 */
+	protected WiFi_Scan(WiFi_Scan ws) {
+		this(ws.get_time(), ws.get_device_id(), ws.get_pos());
+		this._aps = ws._aps;
+	}
 	public static WiFi_Scan init_from_46_csv_file(String line) {
 		WiFi_Scan ans = null;
 		line = line.replaceAll(",,",", ,");
@@ -53,10 +61,14 @@ public class WiFi_Scan {
 		int size = ar.length;
 		int n_of_wifi = 0;
 		if(size>6) {n_of_wifi  =  new Integer(ar[5]);}
-		if(size<5 || size>47 || n_of_wifi*4+6!=size) {
+		if(size<5 || size>47){// || n_of_wifi*4+6!=size) {
 			throw new RuntimeException("error: WiFi_Scan can not be init from String "+line);
 		}
-		Point3D p = new Point3D(ar[2]+" "+ar[3]+" "+ar[4]);
+		Point3D p = new Point3D(0,0,0);
+		try{
+			p = new Point3D(ar[2]+" "+ar[3]+" "+ar[4]);
+		}
+		catch(Exception e) {;	} // ugly code - bug fix for testing set
 		ans= new WiFi_Scan(ar[0], ar[1], p);
 		int i=0;
 		while (i<n_of_wifi) {
@@ -74,7 +86,6 @@ public class WiFi_Scan {
 		for(int i=0;i<num;i++) {
 			s+=","+get(i);
 		}
-		
 		return this.get_time()+","+this._device_id+","+this.get_pos().toFile()+","+num+s;
 	}
 	
@@ -109,7 +120,7 @@ public class WiFi_Scan {
 	public String get_device_id() {return this._device_id;}
 	public void set_device_id(String id) {this._device_id = id;}
 	////////////////////////////////////////////////////////
-	private void set_pos(Point3D _pos) {
+	public void set_pos(Point3D _pos) {
 		this._pos = _pos;
 	}
 	

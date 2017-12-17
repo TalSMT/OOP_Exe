@@ -22,7 +22,9 @@ public class Position_Filter_Circle implements filter{
 		}
 		return ans;
 	}
-	
+	public String toString() {
+		return ""+this.getClass().getName()+" cen:"+this._center+", radius:"+_dist;
+	}
 	/********** Private data can be located anywhere *************/
 	private final Point3D _center;
 	private double _dist;
