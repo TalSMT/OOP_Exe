@@ -86,7 +86,11 @@ public class WiFi_Scan {
 		for(int i=0;i<num;i++) {
 			s+=","+get(i);
 		}
-		return this.get_time()+","+this._device_id+","+this.get_pos().toFile()+","+num+s;
+		String pos = "null,null,null";
+		if (this.get_pos()!=null){
+			pos = this.get_pos().toFile();
+		}
+		return this.get_time()+","+this._device_id+","+pos+","+num+s;
 	}
 	
 	public int size() {return this._aps.size();}
