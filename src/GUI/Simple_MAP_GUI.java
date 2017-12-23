@@ -34,7 +34,7 @@ public class Simple_MAP_GUI extends JFrame{
     	 super(title);
     	 double lat_c = 32.104;
     	 double lon_c = 35.210;
-    	 int zoom = 15; // [14-17]
+    	 int zoom = 17; // [14-17]
     	 int factor = 17-zoom;
     	 double norm = Math.pow(2, factor);
     	 double eps_x=0.00275*norm, eps_y=0.00275*norm;
