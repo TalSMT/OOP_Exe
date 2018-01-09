@@ -2,7 +2,11 @@ package db;
 /**
  * This is a very simple example representing how to work with MySQL 
  * using java JDBC interface;
- * The example mainly present how to read a table representing a set of WiFi_Scans 
+ * The example mainly present how to read a table representing a set of WiFi_Scans
+ * Note: for simplicity only two properties are stored (in the DB) for each AP:
+ * the MAC address (mac) and the signal strength (rssi), the other properties (ssid and channel)
+ * are omitted as the algorithms do not use the additional data.
+ * 
  */
 import java.sql.PreparedStatement;
 import java.sql.Connection;
@@ -24,8 +28,8 @@ public class MySQL_101 {
 
 	  private static String _ip = "5.29.193.52";
 	  private static String _url = "jdbc:mysql://"+_ip+":3306/oop_course_ariel";
-	  private static String _user = "oop2";
-	  private static String _password = "Lambda2();";
+	  private static String _user = "oop1";
+	  private static String _password = "Lambda1();";
 	  private static Connection _con = null;
       
     public static void main(String[] args) {
