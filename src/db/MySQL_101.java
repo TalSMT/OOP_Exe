@@ -1,5 +1,5 @@
 package db;
-/**
+/** 
  * This is a very simple example representing how to work with MySQL 
  * using java JDBC interface;
  * The example mainly present how to read a table representing a set of WiFi_Scans
