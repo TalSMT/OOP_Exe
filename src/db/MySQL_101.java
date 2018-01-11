@@ -46,7 +46,7 @@ public class MySQL_101 {
         try {     
             _con = DriverManager.getConnection(_url, _user, _password);
             st = _con.createStatement();
-            rs = st.executeQuery("SELECT VERSION()");
+            rs = st.executeQuery("SELECT UPDATE_TIME FROM ");
             if (rs.next()) {
                 System.out.println(rs.getString(1));
             }
@@ -93,21 +93,24 @@ public class MySQL_101 {
         try {     
             _con = DriverManager.getConnection(_url, _user, _password);
             st = _con.createStatement();
-            rs = st.executeQuery("SELECT VERSION()");
+            rs = st.executeQuery("SELECT UPDATE_TIME FROM information_schema.tables WHERE TABLE_SCHEMA = 'oop_course_ariel' AND TABLE_NAME = 'ex4_db'");
             if (rs.next()) {
-                System.out.println(rs.getString(1));
+                System.out.println("**** Update: "+rs.getString(1));
             }
            
             PreparedStatement pst = _con.prepareStatement("SELECT * FROM ex4_db");
             rs = pst.executeQuery();
-            
+            int ind=0;
             while (rs.next()) {
             	int size = rs.getInt(7);
             	int len = 7+2*size;
-            	for(int i=1;i<=len;i++){
-            		System.out.print(rs.getString(i)+",");
+            	if(ind%100==0) {
+            		for(int i=1;i<=len;i++){
+            			System.out.print(ind+") "+rs.getString(i)+",");
+            		}
+            		System.out.println();
             	}
-                System.out.println();
+            	ind++;
             }
         } catch (SQLException ex) {
             Logger lgr = Logger.getLogger(MySQL_101.class.getName());
